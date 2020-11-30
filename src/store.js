@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-// import counterReducer from '../reducers/counter/counterSlice';
+import mood from './reducers/mood';
 
 export default configureStore({
   reducer: {
-    // counter: counterReducer,
+    mood
   },
 });

@@ -1,4 +1,5 @@
 import './App.less'
+import Mood from './components/Mood'
 
 function App() {
   return (
@@ -6,11 +7,7 @@ function App() {
       <header>Header</header>
       <main>
         <nav>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-          </ul>
+          <Mood />
         </nav>
         <section>
           <article>Article 1</article>
