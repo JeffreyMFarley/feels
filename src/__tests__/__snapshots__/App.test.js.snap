@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  id="App"
+>
+  <header>
+    Header
+  </header>
+  <main>
+    <nav>
+      <div>
+        <label
+          for="how-foo-now"
+        >
+          foo
+        </label>
+        <input
+          id="how-foo-now"
+          max="100"
+          min="0"
+          name="how-foo-now"
+          type="range"
+          value={1}
+        />
+      </div>
+      <div>
+        <label
+          for="how-bar-now"
+        >
+          bar
+        </label>
+        <input
+          id="how-bar-now"
+          max="100"
+          min="0"
+          name="how-bar-now"
+          type="range"
+          value={2}
+        />
+      </div>
+    </nav>
+    <section>
+      <article>
+        Article 1
+      </article>
+      <article>
+        Article 2
+      </article>
+      <article>
+        Article 3
+      </article>
+    </section>
+    <aside>
+      ads
+    </aside>
+  </main>
+  <footer>
+    footer
+  </footer>
+</div>
+`;

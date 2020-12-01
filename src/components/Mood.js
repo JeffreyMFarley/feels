@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import Emotion from './Emotion';
 
 function Mood(props) {
-  return props.emotions.map(emotion => <Emotion emotion={emotion} />);
+  return props.emotions.map(emotion => <Emotion key={emotion} emotion={emotion} />);
 }
 
 const mapStateToProps = state => {
