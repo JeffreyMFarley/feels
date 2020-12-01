@@ -11,32 +11,32 @@ exports[`renders correctly 1`] = `
     <nav>
       <div>
         <label
-          for="how-foo-now"
+          hmtlfor="foo"
         >
           foo
         </label>
         <input
-          id="how-foo-now"
-          max="100"
+          defaultValue={1}
+          id="foo"
+          max="5"
           min="0"
-          name="how-foo-now"
+          name="foo"
           type="range"
-          value={1}
         />
       </div>
       <div>
         <label
-          for="how-bar-now"
+          hmtlfor="bar"
         >
           bar
         </label>
         <input
-          id="how-bar-now"
-          max="100"
+          defaultValue={2}
+          id="bar"
+          max="5"
           min="0"
-          name="how-bar-now"
+          name="bar"
           type="range"
-          value={2}
         />
       </div>
     </nav>

@@ -1,14 +1,17 @@
 import { connect } from "react-redux";
-import Emotion from './Emotion';
+import Slider from './Slider';
 
 function Mood(props) {
-  return props.emotions.map(emotion => <Emotion key={emotion} emotion={emotion} />);
+  const sensations = Object.keys(props.mood)
+
+  return sensations.map(
+    s => <Slider _id={s} label={s} key={s} value={props.mood[s]} />
+  );
 }
 
 const mapStateToProps = state => {
-  return {
-    emotions: Object.keys(state.mood)
-  }
+  const mood = { ...state.mood }
+  return { mood }
 }
 
 export default connect(mapStateToProps)(Mood);
