@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 
 export const changeSensation = createAction(
     'SENSATION_CHANGED',
-    (sensation, newValue) => ( {
+    ( sensation, newValue ) => ( {
       payload: {
         sensation,
         value: newValue

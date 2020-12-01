@@ -1,5 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { changeSensation } from '../actions/sensation'
 import { clamp } from '../utils';
+import { createSlice } from '@reduxjs/toolkit';
 
 export const initialState = {
   anger: 0,
@@ -13,20 +14,20 @@ export const initialState = {
   tender: 0
 }
 
-export const moodSlice = createSlice({
+export const moodSlice = createSlice( {
   name: 'mood',
   initialState,
   reducers: {},
   extraReducers: {
-    'SENSATION_CHANGED': (state, action) => {
+    [changeSensation]: ( state, action ) => {
       const { sensation, value } = action.payload;
 
-      if( sensation in state ) {
-        state[sensation] = clamp(value, 0 , 5);
+      if ( sensation in state ) {
+        state[sensation] = clamp( value, 0, 5 );
       }
       return state
     }
   }
-});
+} );
 
 export default moodSlice.reducer;

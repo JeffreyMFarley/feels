@@ -5,10 +5,10 @@
  * @param {int} max biggest number it can be
  * @returns {*}the limited value
  */
-export function clamp(x, min, max) {
-  if (x < min) {
+export function clamp( x, min, max ) {
+  if ( x < min ) {
     x = min;
-  } else if (x > max) {
+  } else if ( x > max ) {
     x = max;
   }
   return x;

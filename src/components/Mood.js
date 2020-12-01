@@ -1,11 +1,20 @@
-import { connect } from "react-redux";
+import { changeSensation } from '../actions/sensation';
+import { connect } from 'react-redux';
+import React from 'react';
 import Slider from './Slider';
 
-function Mood(props) {
-  const sensations = Object.keys(props.mood)
+/**
+* Creates the Mood component
+*
+* @param {object} props the properties of the component
+* @returns {string} the HTML to render
+*/
+function Mood( props ) {
+  const sensations = Object.keys( props.mood )
 
   return sensations.map(
-    s => <Slider _id={s} label={s} key={s} value={props.mood[s]} />
+    s => <Slider _id={s} label={s} key={s}
+                 value={props.mood[s]} />
   );
 }
 
@@ -14,4 +23,4 @@ const mapStateToProps = state => {
   return { mood }
 }
 
-export default connect(mapStateToProps)(Mood);
+export default connect( mapStateToProps )( Mood );

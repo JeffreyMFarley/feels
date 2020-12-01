@@ -1,6 +1,12 @@
 import './App.less'
 import Mood from './components/Mood'
+import React from 'react'
 
+/**
+* renders the App component
+*
+* @returns {string} the HTML to render
+*/
 function App() {
   return (
     <div id="App">
@@ -18,7 +24,7 @@ function App() {
       </main>
       <footer>footer</footer>
     </div>
-  );
+  )
 }
 
 export default App;
