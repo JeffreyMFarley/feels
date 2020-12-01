@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { clamp } from '../utils';
 
 export const initialState = {
   anger: 0,
@@ -16,7 +17,16 @@ export const moodSlice = createSlice({
   name: 'mood',
   initialState,
   reducers: {},
-  extraReducers: {}
+  extraReducers: {
+    'SENSATION_CHANGED': (state, action) => {
+      const { sensation, value } = action.payload;
+
+      if( sensation in state ) {
+        state[sensation] = clamp(value, 0 , 5);
+      }
+      return state
+    }
+  }
 });
 
 export default moodSlice.reducer;

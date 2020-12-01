@@ -1,17 +1,44 @@
-import sut from '../mood'
+import { changeSensation } from '../../actions/sensation'
+
+import sut, { initialState } from '../mood'
 
 describe('mood reducer', () => {
-  it('should handle initial state', () => {
-    expect(sut(undefined, {})).toEqual({
-      anger: 0,
-      disgust: 0,
-      energy: 3,
-      fear: 0,
-      happy: 0,
-      pain: 0,
-      sad: 0,
-      surprise: 0,
-      tender: 0
-    });
+  let expected;
+  beforeEach( () => {
+    expected = { ...initialState }
+  } );
+
+  it('handles initial state', () => {
+    expect(sut(undefined, {})).toEqual(expected);
   });
+
+  it('changes a known value', () => {
+    expected['fear'] = 1;
+
+    const actual = sut(undefined, changeSensation('fear', 1))
+
+    expect(actual).toEqual(expected);
+  } );
+
+  it('rejects an unknown value', () => {
+    const actual = sut(undefined, changeSensation('foo', 1))
+
+    expect(actual).toEqual(expected);
+  } );
+
+  it( 'clamps values that are too high' , () => {
+    expected['fear'] = 5;
+
+    const actual = sut(undefined, changeSensation('fear', 99))
+
+    expect(actual).toEqual(expected);
+  } );
+
+  it( 'clamps values that are too low' , () => {
+    expected['energy'] = 0;
+
+    const actual = sut(undefined, changeSensation('energy', -99))
+
+    expect(actual).toEqual(expected);
+  } );
 });
