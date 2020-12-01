@@ -25,4 +25,7 @@ $ yarn add redux
 # Adding test support
 $ yarn add react-test-renderer
 $ yarn add redux-mock-store
+
+# Adding prop-types support
+$ yarn add prop-types
 ```
