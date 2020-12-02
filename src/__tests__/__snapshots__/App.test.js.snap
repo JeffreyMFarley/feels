@@ -11,32 +11,34 @@ exports[`renders correctly 1`] = `
     <nav>
       <div>
         <label
-          hmtlfor="foo"
+          hmtlfor="mood_foo"
         >
           foo
         </label>
         <input
-          defaultValue={1}
-          id="foo"
+          id="mood_foo"
           max="5"
           min="0"
-          name="foo"
+          name="mood_foo"
+          onChange={[Function]}
           type="range"
+          value={1}
         />
       </div>
       <div>
         <label
-          hmtlfor="bar"
+          hmtlfor="mood_bar"
         >
           bar
         </label>
         <input
-          defaultValue={2}
-          id="bar"
+          id="mood_bar"
           max="5"
           min="0"
-          name="bar"
+          name="mood_bar"
+          onChange={[Function]}
           type="range"
+          value={2}
         />
       </div>
     </nav>
