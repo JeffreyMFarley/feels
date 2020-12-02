@@ -23,7 +23,7 @@ export const moodSlice = createSlice( {
       const { sensation, value } = action.payload;
 
       if ( sensation in state ) {
-        state[sensation] = clamp( value, 0, 5 );
+        state[sensation] = clamp( Number( value ), 0, 5 );
       }
       return state
     }
